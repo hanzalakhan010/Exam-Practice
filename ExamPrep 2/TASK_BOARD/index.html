@@ -1,12 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <title>TaskBoard App</title>
+  <link rel="stylesheet" href="./styles.css">
 </head>
+
 <body>
   <h1>TaskBoard</h1>
   <!-- Add columns and task input section here -->
+  <div id='taskInput'>
+    <input placeholder="Add task">
+    <button>Add</button>
+  </div>
+  <div id='tasks'>
+    <div id='todo'></div>
+    <div id='inProgress'></div>
+    <div id='done'></div>
+
+  </div>
+
   <script src="app.ts"></script>
 </body>
+
 </html>

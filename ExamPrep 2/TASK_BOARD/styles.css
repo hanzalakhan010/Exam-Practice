@@ -1,0 +1,37 @@
+* {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+h1 {
+    text-align: center;
+}
+
+#taskInput input,#taskInput button {
+    font-size: larger;
+
+}
+
+#taskInput {
+    margin: auto;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+#tasks {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 10px;
+}
+
+#tasks div {
+    width: 32%;
+    border:.5px solid gray;
+    border-radius:10px;
+    height: 70dvh;
+}
