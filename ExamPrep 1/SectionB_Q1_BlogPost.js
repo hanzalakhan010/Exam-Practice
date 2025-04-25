@@ -2,6 +2,7 @@
 // Section B - Q1: Type-Safe Blog Post API
 let blogs = [];
 class Blogs {
+    blogs;
     constructor(blogs) {
         this.blogs = blogs;
     }

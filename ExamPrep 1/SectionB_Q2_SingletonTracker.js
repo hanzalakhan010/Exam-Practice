@@ -3,6 +3,8 @@
 // Design a Tracker class that can log and retrieve events
 // Ensure that only one __instance of the class can be created
 class Tracker {
+    static __instance;
+    events;
     constructor() {
         this.events = [];
         if (!Tracker.__instance) {

@@ -6,7 +6,8 @@ h1 {
     text-align: center;
 }
 
-#taskInput input,#taskInput button {
+#taskInput input,
+#taskInput button {
     font-size: larger;
 
 }
@@ -29,9 +30,34 @@ h1 {
     column-gap: 10px;
 }
 
-#tasks div {
-    width: 32%;
-    border:.5px solid gray;
-    border-radius:10px;
+#tasks>div {
+    width: 48%;
+    border: .5px solid gray;
+    border-radius: 15px 0px 0px 15px;
     height: 70dvh;
+    overflow-y: scroll;
+}
+
+.card {
+    background-color: aqua;
+    width: 90%;
+    /* height: ; */
+    margin: 15px auto;
+    padding: 10px;
+}
+
+.card.done {
+    background-color: greenyellow;
+}
+
+.card.todo {
+    background-color: rgb(255, 136, 136);
+}
+
+.card.inProgress {
+    background-color: burlywood;
+}
+.card>p{
+    /* height: 300px; */
+    /* text-overflow: clip; */
 }

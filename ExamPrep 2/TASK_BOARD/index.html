@@ -5,23 +5,24 @@
   <meta charset="UTF-8" />
   <title>TaskBoard App</title>
   <link rel="stylesheet" href="./styles.css">
+  <script src="./Q1_TaskBoardApp.js" defer></script>
 </head>
 
 <body>
   <h1>TaskBoard</h1>
   <!-- Add columns and task input section here -->
   <div id='taskInput'>
-    <input placeholder="Add task">
-    <button>Add</button>
+    <input id='task' placeholder="Add task">
+    <button onclick="todos.addTodo()">Add</button>
   </div>
   <div id='tasks'>
-    <div id='todo'></div>
-    <div id='inProgress'></div>
-    <div id='done'></div>
+    <div id='todo'>
+    </div>
+    <div id='done'>
+    </div>
 
   </div>
 
-  <script src="app.ts"></script>
 </body>
 
 </html>
