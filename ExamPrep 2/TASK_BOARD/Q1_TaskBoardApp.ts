@@ -15,6 +15,7 @@ class TODOS {
   constructor() {
     this.todos = [];
     this.loadTodos();
+    this.renderTodos();
   }
   addTodo() {
     let task = document.getElementById("task") as HTMLInputElement;
@@ -26,6 +27,17 @@ class TODOS {
         status: "Todo",
       });
     }
+    this.saveState();
+    this.renderTodos();
+  }
+  chageStatus(_id: string, status: "Todo" | "Done") {
+    for (let todo of this.todos) {
+      if (todo._id == _id) {
+        todo.status = status;
+        break;
+      }
+    }
+    this.saveState()
     this.renderTodos();
   }
   renderTodos() {
@@ -35,19 +47,12 @@ class TODOS {
       todoDiv.innerHTML = "";
       doneDiv.innerHTML = "";
       this.todos.forEach((todo) => {
-        let options = ["Todo", "Done"];
         let html = `
-            <div class="card todo">
-                <p>task todotask todotask</p>
-                <div>
-                    ${options
-                      .filter((option) => option != todo.status)
-                      .map(
-                        (option) =>
-                          `<button value='${option}'>${option}</button>`
-                      )
-                      .join("")}
-                      </div>
+            <div class="card ${todo.status.toLocaleLowerCase()}">
+                <p>${todo.task}</p>
+                <button onclick= 'todos.chageStatus("${todo._id}","${
+          todo.status == "Done" ? "Todo" : "Done"
+        }")' '>${todo.status == "Done" ? "Todo" : "Done"}</button>
             </div>
         `;
         if (todo.status == "Done")
@@ -57,8 +62,12 @@ class TODOS {
       });
     }
   }
+  saveState() {
+    localStorage.setItem("todo", JSON.stringify(this.todos));
+  }
   loadTodos() {
     let rawData = localStorage.getItem("todo");
+    console.log(rawData);
     if (rawData) {
       this.todos = JSON.parse(rawData);
     }
