@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>MoodBoard</title>
+  <script defer src="app.js"></script>
+  <style>
+    .selected {
+      background-color: greenyellow;
+    }
+
+    .tags {
+      padding: 5px;
+      /* margin: 10px; */
+      border: 1px solid gray;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>MoodBoard</h1>
+  <div style="padding-bottom: 20px;">
+    <span class="tags">Happy</span>
+    <span class="tags">Sad</span>
+    <span class="tags">Motivated</span>
+    <span class="tags">Calm</span>
+    <span class="tags">Angry</span>
+    <span class="tags">Hopeful</span>
+    <span class="tags">Anxious</span>
+    <span class="tags">Lonely</span>
+    <span class="tags">Confident</span>
+    <span class="tags">Tired</span>
+    
+  </div>
+  <button onclick="getMood()">Generate</button>
+  <div id="output"></div>
+</body>
+
+</html>
